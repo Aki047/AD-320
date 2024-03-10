@@ -10,7 +10,7 @@ This is a simple Express server application that demonstrates basic routing and 
 
 1. Clone the repository to your local machine:
    ```bash
-   git clone <https://github.com/Aki047/AD-320/Week3.git>
+   git clone <https://github.com/Aki047/AD-320/Week 3.git>
    ```
 
 2. Navigate to the project directory:
