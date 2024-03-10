@@ -7,13 +7,13 @@ This is a simple Express NodeJS server application that demonstrates conditional
 
 ### Initialize a new NodeJS project:
 
-```bash
+```Command Line
 npm init -y
 ```
 
 ### Install Express using npm:
 
-```bash
+```Command Line
 npm install express
 ```
 
@@ -65,16 +65,12 @@ Implement a middleware to handle undefined routes and return a "404 - Not Found"
 ```javascript
 app.use((req, res) => {
     res.status(404).send('404 - Not Found');
-    
-#### Explanation:
+});
+```
+
+## Explanation
 
 - In the first route handler for `/foo`, we use `Math.random()` to generate a random number between 0 and 1. If the generated number is less than 0.5, we send the response 'sometimes this'. Otherwise, we call `next()`, passing control to the next applicable route handler.
 - In the second route handler for `/foo`, we send the response 'and sometimes that'. This route handler will be called if the generated number is greater than or equal to 0.5 in the previous handler.
-
-
-
-
-
-});
 ```
 

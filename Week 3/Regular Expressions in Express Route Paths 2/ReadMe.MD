@@ -1,38 +1,19 @@
 
 ```markdown
-# Express Server with Regular Expression Routes
+# Regular Expressions in Express Route Paths 2
 
-This is a Node.js application built with Express that demonstrates the use of regular expression routes for handling different URL patterns.
+This is a Node.js application built with Express that demonstrates the use of regular expression routes for handling different URL patterns. The example used will be routing / users and /username.  
 
-## Installation
-
-1. Clone the repository to your local machine:
-   ```Command Line
-   git clone <repository-url>
-   ```
-
-2. Navigate to the project directory:
-   ```Command Line
-   cd express-server
-   ```
-
-3. Install dependencies using npm:
-   ```Command Line
-   npm install
-   ```
-
-## Usage
-
-To start the server, run the following command:
-```Command Line
-npm start
-```
-
-By default, the server will listen on port 3000. You can specify a different port by setting the `PORT` environment variable.
+## Server Configuration
+The server is configured to listen on a port specified by the environment variable PORT, defaulting to port 3000.
 
 ## Regular Expression Routes
 
 This server includes a route that uses a regular expression to match multiple URL patterns. The route `/user(name)?` matches both `/user` and `/username`. When a request is made to EITHER route, the server responds with a simple text message.
+
+## Explanation of Regular Expressions in Route Paths
+
+Regular expressions are powerful tools for pattern matching in strings. In Express route paths, regular expressions can be used to define dynamic routes that match multiple URL patterns. In the example /user(name)?, the (name) part is enclosed in parentheses to create a capturing group, and the ? quantifier makes the group optional. This means that the (name) part can match either "name" or nothing at all. Therefore, the route /user will match as well as /username, making the route more flexible and versatile.
 
 ## Error Handling
 
