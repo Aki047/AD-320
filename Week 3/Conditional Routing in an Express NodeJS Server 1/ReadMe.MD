@@ -1,12 +1,11 @@
 
-```markdown
+```
 
 
 
-Conditional Routing in an Express NodeJS Server 1
-=================================================	
+## Conditional Routing in an Express NodeJS Server 1
 
-   This is a simple Express NodeJS server application that demonstrates conditional routing to serve different responses based on certain conditions.
+This is a simple Express NodeJS server application that demonstrates conditional routing to serve different responses based on certain conditions.
 
 
 ## Project Setup
