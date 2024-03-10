@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 
@@ -7,11 +8,7 @@ app.listen(PORT, () => {
 });
 
 app.get('/foo', (req, res, next) => {
-    if (Math.random() < 0.5) {
-        res.send('sometimes this');
-    } else {
-        next(); // Pass control to the next route handler
-    }
+    Math.random() < 0.5 ? res.send('sometimes this') : next();
 });
 
 app.get('/foo', (req, res) => {
@@ -21,4 +18,3 @@ app.get('/foo', (req, res) => {
 app.use((req, res) => {
     res.status(404).send('404 - Not Found');
 });
-
