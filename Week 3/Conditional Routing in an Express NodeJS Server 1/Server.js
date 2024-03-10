@@ -1,4 +1,3 @@
-
 const express = require('express');
 const app = express();
 
@@ -8,7 +7,11 @@ app.listen(PORT, () => {
 });
 
 app.get('/foo', (req, res, next) => {
-    Math.random() < 0.5 ? res.send('sometimes this') : next();
+    if (Math.random() < 0.5) {
+        res.send('sometimes this');
+    } else {
+        next();
+    }
 });
 
 app.get('/foo', (req, res) => {
