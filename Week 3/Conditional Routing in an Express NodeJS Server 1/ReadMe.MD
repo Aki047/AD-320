@@ -28,10 +28,6 @@ const app = express();
 
 ## Server Configuration
 
-### Create an Express application instance:
-
-You've already done this with `const app = express();` in the previous step.
-
 ### Configure the server to listen on a port:
 
 Add the following code to listen on the provided port or default to port 3000:
@@ -69,8 +65,6 @@ app.get('/foo', (req, res) => {
 - In the second route handler for `/foo`, we send the response 'and sometimes that'. This route handler will be called if the generated number is greater than or equal to 0.5 in the previous handler.
 
 ## Error Handling
-
-### Set up a 404 error handler:
 
 Implement a middleware to handle undefined routes and return a "404 - Not Found" response:
 
