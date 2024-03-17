@@ -1,0 +1,38 @@
+body {
+    font-family: Baskerville, sans-serif;
+    background-color: #c8a2c8; /* Lilac background */
+    color: purple; /* White font color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+div {
+    margin-bottom: 20px; /* Add some space between div elements */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* White background with some transparency */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center; /* Center text */
+}
+
+ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    padding: 0; /* Remove default padding */
+}
+
+li {
+    cursor: pointer; /* Change cursor to pointer when hovering over list items */
+    margin-bottom: 10px; /* Add some space between list items */
+}
+
+li:hover {
+    background-color: #f0f0f0; /* Light gray background color when hovering over list items */
+}

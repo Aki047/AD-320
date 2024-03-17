@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Guess Who</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<div id="profile" class="profile">
+        <img id="start-game" src="Guess_Who.png" alt="Start Game" onclick="fetchCharacter()">
+        <label id="start-game-label" for="start-game">Start Game</label>
+    <div class="hints">
+        <!-- Hints will be displayed here -->
+    </div>
+</div>
+<div class="button-container">
+    <button id="reveal-button" class="reveal-button" style="display: none;" onclick="revealCharacter()">Revelare</button>
+    <button id="play-again-button" style="display: none;" onclick="fetchCharacter()">Play Again</button>
+</div>
+<script src="Character_Details.js"></script>
+</body>
+</html>

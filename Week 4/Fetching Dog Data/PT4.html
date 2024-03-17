@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Breed Selection</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <h1>Interactive Breed Selection</h1>
+    <div id="breedsList"></div>
+    <div id="breedDetails"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to fetch details of a specific breed by its ID
+            function fetchBreedDetails(breedId) {
+                fetch(`https://dogapi.dog/api/v2/breeds/${breedId}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        displayBreedDetails(data.data.attributes);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching breed details:', error);
+                    });
+            }
+
+            // Function to display breed details
+            function displayBreedDetails(breedData) {
+                const breedDetails = document.getElementById('breedDetails');
+                breedDetails.innerHTML = `
+                    <h2>${breedData.name}</h2>
+                    <p><strong>Description:</strong> ${breedData.description}</p>
+                    <p><strong>Life Span:</strong> ${breedData.min_life}-${breedData.max_life} years</p>
+                    <p><strong>Hypoallergenic:</strong> ${breedData.hypoallergenic ? 'Yes' : 'No'}</p>
+                `;
+            }
+
+            // Function to fetch and display breed details upon selection
+            function selectBreed(breedId) {
+                fetchBreedDetails(breedId);
+            }
+
+            // Function to render list of breeds as selectable elements
+            function renderBreedsList(breeds) {
+                const breedsList = document.getElementById('breedsList');
+                const ul = document.createElement('ul');
+                breeds.forEach(breed => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `${breed.attributes.name}`;
+                    li.addEventListener('click', () => {
+                        selectBreed(breed.id);
+                    });
+                    ul.appendChild(li);
+                });
+                breedsList.appendChild(ul);
+            }
+
+            // Fetch the list of breeds and render them as selectable elements
+            fetch('https://dogapi.dog/api/v2/breeds')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const breeds = data.data;
+                    renderBreedsList(breeds);
+                })
+                .catch(error => {
+                    console.error('Error fetching breeds:', error);
+                });
+        });
+    </script>
+</body>
+</html>

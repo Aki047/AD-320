@@ -1,0 +1,75 @@
+body {
+    background-color: white;
+    font-family: Arial, sans-serif, burgundy;
+    font-color: burgundy;
+    background-image: url('Background.jpg');
+    background-size: cover; /* Stretch the background image to cover the entire viewport */
+    background-position: center; /* Center the background image */
+    display: flex;
+    flex-direction: column; /* Align elements vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.profile {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    text-align: center;
+    border: 2px solid gold;
+    padding: 20px;
+}
+.profile img {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.profile h2 {
+    margin-bottom: 10px;
+}
+.profile p {
+    margin-bottom: 20px;
+}
+#start-game {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    transition: width 0.5s;
+}
+
+#start-game-label {
+    display: block;
+    color: gold;
+    margin-top: 10px;
+}
+
+#start-game:hover {
+    width: 220px;
+}
+.panel {
+    background-color: gold;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.panel p {
+    margin: 5px 0;
+}
+
+.reveal-button,
+#play-again-button {
+    margin: 20px 0; /* Add margin at the top and bottom */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white; /* White background */
+    color: #800020; /* Burgundy font color */
+    border: 2px solid gold; /* Gold border */
+    border-radius: 5px;
+}
