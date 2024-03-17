@@ -1,0 +1,26 @@
+/* Set purple background */
+body {
+    background-color: purple;
+}
+
+/* Center information */
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.wrapper {
+    background-color: #93E9BE; 
+    padding: 20px; 
+    width: 60%; 
+    text-align: left;
+}
+
+.profile {
+    text-align: center;
+
+}
